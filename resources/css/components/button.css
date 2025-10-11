@@ -1,0 +1,10 @@
+/* Button components and colors */
+@layer components {
+    .button {
+        @apply p-3 w-full rounded;
+    }
+
+    .button.button--primary {
+        @apply bg-blue-500 text-white;
+    }
+}

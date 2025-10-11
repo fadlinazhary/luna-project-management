@@ -1,0 +1,9 @@
+@layer components {
+    .link {
+        @apply underline;
+    }
+
+    .link--primary {
+        @apply text-blue-500;
+    }
+}
