@@ -10,8 +10,15 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-    @yield('content')
-    {{ $slot }}
+    <main class="app__body">
+        <livewire:components.sidebar>
+        
+        <section class="app__container">
+            <livewire:components.topbar>
+            {{ $slot }}
+        </section>
+    </main>
+
 
     @livewireScripts
     @stack('scripts')
