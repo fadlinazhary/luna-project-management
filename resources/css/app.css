@@ -5,28 +5,28 @@
  */
 /* Base */
 /* Typography */
-@import "./base/typography.css";
+@import "./base/fonts.css";
 
 /* Components */
 @import "./components/button.css";
 @import "./components/link.css";
+@import "./components/alert.css";
+@import "./components/form-group.css";
+@import "./components/text.css";
+@import "./components/sidebar.css";
+@import "./components/topbar.css";
 
 /* Finally, setup tailwindcss */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Form Group Block */
-.form-group {
-    @apply flex flex-col my-4;
+.app__body {
+    @apply flex h-screen w-full;
 }
 
-.form-group .form-group__label {
-    @apply font-semibold mb-2;
-}
-
-.form-group .form-group__input {
-    @apply border p-2 rounded-sm w-full focus:outline-blue-300;
+.app__container {
+    @apply p-5 bg-gray-50 w-full;
 }
 
 /* Auth Block */

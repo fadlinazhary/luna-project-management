@@ -1,0 +1,21 @@
+@layer components {
+    .sidebar {
+        @apply flex flex-col p-5 border border-gray-300 min-h-full w-1/5 shadow-lg;
+    }
+
+    .sidebar__header {
+        @apply my-3;
+    }
+
+    .sidebar .sidebar__menu {
+        @apply flex flex-col;
+    }
+
+    .sidebar__menu-item {
+        @apply my-2;
+    }
+
+    .sidebar__menu-item .sidebar__menu-link {
+        @apply font-medium text-[18px];
+    }
+}

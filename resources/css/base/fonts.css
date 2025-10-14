@@ -1,0 +1,43 @@
+@font-face {
+    font-display: swap;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/quicksand/quicksand.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/quicksand/quicksand-500.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/quicksand/quicksand-600.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/quicksand/quicksand-700.woff2') format('woff2');
+}
+
+/* Fix the weight of the texts */
+@layer base {
+    
+    p, span, blockquote, a {
+        @apply font-medium;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-semibold;
+    }
+}

@@ -1,0 +1,13 @@
+@layer components {
+    .topbar {
+        @apply flex justify-end;
+    }
+
+    .topbar__menu {
+        @apply flex;
+    }
+
+    .topbar__menu-item {
+        @apply p-2;
+    }
+}

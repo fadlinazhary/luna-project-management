@@ -1,0 +1,21 @@
+@layer components {
+    .form-group {
+        @apply flex flex-col my-4;
+    }
+
+    .form-group .form-group__label {
+        @apply font-semibold mb-2;
+    }
+
+    .form-group .form-group__input {
+        @apply border p-2 rounded w-full focus:border-blue-300;
+    }
+
+    .form-group .form-group__input.error {
+        @apply border-red-500;
+    }
+
+    .form-group .form-group__input.success {
+        @apply border-green-500;
+    }
+}

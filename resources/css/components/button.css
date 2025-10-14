@@ -1,10 +1,10 @@
 /* Button components and colors */
 @layer components {
     .button {
-        @apply p-3 w-full rounded;
+        @apply p-3 rounded transition-colors disabled:cursor-not-allowed;
     }
 
-    .button.button--primary {
-        @apply bg-blue-500 text-white;
+    .button--primary {
+        @apply bg-blue-500 text-white hover:bg-blue-400 focus:bg-blue-600 disabled:bg-blue-100;
     }
 }
