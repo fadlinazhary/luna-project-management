@@ -1,6 +1,6 @@
 @layer components {
     .topbar {
-        @apply flex justify-end;
+        @apply flex justify-between p-3;
     }
 
     .topbar__menu {
@@ -8,6 +8,6 @@
     }
 
     .topbar__menu-item {
-        @apply p-2;
+        @apply mx-2;
     }
 }
