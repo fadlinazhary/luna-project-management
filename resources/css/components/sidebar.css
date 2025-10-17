@@ -1,6 +1,6 @@
 @layer components {
     .sidebar {
-        @apply flex flex-col p-5 bg-gray-50 border border-gray-300 min-h-full w-1/5;
+        @apply flex flex-col p-5 bg-gray-50 border-r border-r-gray-200 min-h-full w-1/5;
     }
 
     .sidebar__header {
@@ -16,23 +16,18 @@
     }
 
     .sidebar__menu-item {
-        @apply flex items-center my-1.5 p-2 rounded-lg space-x-2;
+        @apply my-1.5 rounded-lg;
     }
 
-    .sidebar__menu-item .sidebar__menu-icon {
+    .sidebar__menu-link {
+        @apply flex items-center rounded-lg p-2.5 gap-2 text-base;
+    }
+
+    .sidebar__menu-icon {
         @apply w-5 h-5 flex-shrink-0;
     }
 
-    .sidebar__menu-item .sidebar__menu-link {
-        @apply font-medium text-base;
-    }
-
-    .sidebar__menu-item--active {
-        @apply bg-blue-100;
-    }
-
-    .sidebar__menu-item--active .sidebar__menu-icon,
-    .sidebar__menu-item--active .sidebar__menu-link {
-        @apply text-blue-500;
+    .sidebar__menu-link--active {
+        @apply bg-blue-100 text-blue-500;
     }
 }

@@ -1,0 +1,21 @@
+@layer components {
+    .tabs {
+        @apply mt-3 transition-all;
+    }
+
+    .tabs__list {
+        @apply flex space-x-3;
+    }
+
+    .tabs__tab {
+        @apply font-medium rounded-md px-4 py-2 transition-all hover:bg-blue-100 hover:text-blue-500;
+    }
+
+    .tabs__tab--active {
+        @apply bg-blue-100 text-blue-500;
+    }
+
+    .tab__content {
+        @apply mt-5;
+    }
+}
