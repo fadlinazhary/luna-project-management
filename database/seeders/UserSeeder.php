@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Profile;
 use App\Models\User;
+use Faker\Provider\Lorem;
 use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder
@@ -20,9 +21,15 @@ class UserSeeder extends Seeder
             ->create();
 
         // Create example user
-        User::create([
+        $user = User::create([
+            'username' => 'luna',
             'email' => 'pm@luna.id',
             'password' => 'luna',
+        ]);
+
+        $user->profile()->create([
+            'name' => 'Luna',
+            'bio' => Lorem::sentence(),
         ]);
     }
 }
