@@ -27,8 +27,11 @@ class Register extends Component
             'email' => ['required', 'email'],
             'password' => ['required', 'confirmed', Password::min(8)->letters()->numbers()->symbols()->uncompromised()],
         ]);
+        
+        $username = strtolower(str_replace(' ', '_', $validated['name']));
 
         $user = User::create([
+            'username' => $username,
             'email' => $validated['email'],
             'password' => $validated['password'],
         ]);
@@ -37,7 +40,7 @@ class Register extends Component
             $user->profile()->create([
                 'name' => $validated['name'],
             ]);
-            session()->flash('success', 'Account has been successfully created! Please log in!');
+            session()->flash('message', 'Account has been successfully created! Please log in!');
             return redirect('/login');
         }
 
