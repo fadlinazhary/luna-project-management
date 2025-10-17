@@ -1,0 +1,11 @@
+.main__container {
+    
+}
+
+.main__title {
+    @apply text-3xl font-semibold;
+}
+
+.main__sub-title {
+    @apply text-lg my-1;
+}

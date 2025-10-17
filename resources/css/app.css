@@ -15,6 +15,14 @@
 @import "./components/text.css";
 @import "./components/sidebar.css";
 @import "./components/topbar.css";
+@import "./components/card.css";
+@import "./components/tabs.css";
+
+/* Utilities */
+
+/* Page-specific */
+@import "./pages/auth.css";
+@import "./pages/main.css";
 
 /* Finally, setup tailwindcss */
 @tailwind base;
@@ -22,63 +30,13 @@
 @tailwind utilities;
 
 .app__body {
-    @apply flex h-screen w-full;
+    @apply flex min-h-screen w-full bg-gray-50;
 }
 
 .app__container {
-    @apply p-5 bg-gray-50 w-full;
+    @apply p-6 w-full;
 }
 
-/* Auth Block */
-.auth {
-    @apply min-h-screen flex justify-center items-center bg-gray-50;
-}
-
-/* Login Page */
-.login {
-    @apply w-1/3 p-8 border flex flex-col rounded-md shadow-md bg-white;
-}
-
-.login .login__header {
-    @apply mb-4 text-center w-full;
-}
-
-.login .login__header .login__title {
-    @apply font-semibold text-3xl;
-}
-
-.login .login__header .login__description {
-    @apply font-medium text-lg mt-3;
-}
-
-.login .login__body {
-    @apply mt-3 w-full;
-}
-
-.login .login__footer {
-    @apply my-2 text-center;
-}
-
-.register {
-    @apply w-1/3 p-8 border flex flex-col rounded-md shadow-md bg-white;
-}
-
-.register .register__header {
-    @apply mb-4 text-center w-full;
-}
-
-.register .register__header .register__title {
-    @apply font-semibold text-3xl;
-}
-
-.register .register__header .register__description {
-    @apply font-medium text-lg mt-3;
-}
-
-.register .register__body {
-    @apply mt-3 w-full;
-}
-
-.register .register__footer {
-    @apply my-2 text-center;
+.row {
+    @apply w-full flex;
 }
