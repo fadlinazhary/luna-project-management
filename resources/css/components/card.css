@@ -1,6 +1,6 @@
 @layer components {
     .card {
-        @apply p-3 w-64 rounded-lg gap-4 shadow-md bg-white;
+        @apply flex flex-col justify-between p-4 w-64 rounded-lg gap-4 shadow-md bg-white;
     }
 
     .card__title {
@@ -12,6 +12,10 @@
     }
 
     .card__body {
-        @apply mt-4;
+        @apply flex-1 mt-2;
+    }
+
+    .card__footer {
+        @apply mt-auto bottom-2;
     }
 }

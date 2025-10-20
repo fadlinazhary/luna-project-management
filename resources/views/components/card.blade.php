@@ -13,4 +13,10 @@
     <div class="card__body">
         {{ $slot }}
     </div>
+
+    @if (isset($footer))
+        <div class="card__footer">
+            {{ $footer }}
+        </div>
+    @endif
 </div>
