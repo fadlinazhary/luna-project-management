@@ -10,26 +10,58 @@
 
     <section class="grid grid-cols-3 mt-3 gap-3">
         <div class="bg-white shadow-sm p-4 rounded flex flex-col">
-            <h1 class="text-xl">Start Date</h1>
+            <x-heroicon-o-calendar-days class="w-6 h-6" />
+            <h1 class="text-lg mt-3">Start Date</h1>
             <div class="flex-1">
-                <span class="text-lg">{{ \Carbon\Carbon::parse($project->start_date)->format('d F Y') }}</span>
+                <span class="text-base">{{ $project->start_date }}</span>
             </div>
         </div>
         <div class="bg-white shadow-sm p-4 rounded flex flex-col">
-            <h1 class="text-xl">End Date</h1>
+            <x-heroicon-o-calendar-days class="w-6 h-6" />
+            <h1 class="text-lg mt-3">Due Date</h1>
             <div class="flex-1">
-                <span class="text-lg">{{ \Carbon\Carbon::parse($project->end_date)->format('d F Y') }}</span>
+                <span class="text-base">{{ $project->due_date }}</span>
             </div>
         </div>
         <div class="bg-white shadow-sm p-4 rounded flex flex-col">
-            <h1 class="text-xl">Status</h1>
+            <x-heroicon-o-flag class="w-6 h-6" />
+            <h1 class="text-lg mt-3">Status</h1>
             <div class="flex-1">
-                <span class="text-lg font-semibold">{{ ucwords($project->status) }}</span>
+                <span class="text-base font-medium">{{ $project->status }}</span>
             </div>
         </div>
     </section>
 
     <section class="mt-3">
-        <h1 class="text-xl">Activities</h1>
+        <h1 class="text-xl font-semibold mb-2">Tasks</h1>
+        <div class="overflow-x-auto bg-white shadow rounded-lg border border-gray-100">
+            <table class="min-w-full text-sm text-gray-700">
+            <thead class="bg-gray-50 border-b">
+                <tr class="text-left">
+                    <th class="px-4 py-3 font-medium">No.</th>
+                    <th class="px-4 py-3 font-medium">Task Name</th>
+                    <th class="px-4 py-3 font-medium">Priority</th>
+                    <th class="px-4 py-3 font-medium">Status</th>
+                    <th class="px-4 py-3 font-medium">Date</th>
+                    <th class="px-4 py-3 font-medium">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+                @foreach ($project->tasks as $task)
+                <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-3">{{ $loop->iteration }}</td>
+                    <td class="px-4 py-3">{{ $task->name }}</td>
+                    <td class="px-4 py-3">{{ $task->priority }}</td>
+                    <td class="px-4 py-3">{{ $task->status }}</td>
+                    <td class="px-4 py-3">{{ $task->start_date }} &mdash; {{ $task->due_date }}</td>
+                    <td class="px-4 py-3">
+                        <button class="button button--danger button--small">Delete Task</button>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+            </table>
+        </div>
     </section>
+
 </div>
