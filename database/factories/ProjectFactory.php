@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Project;
+use App\Models\Task;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -22,18 +24,28 @@ class ProjectFactory extends Factory
 
         // Status
         $status = ['planned', 'in progress', 'completed', 'on hold'];
-        $priorities = [null, 'low', 'medium', 'high'];
+        // $priorities = [null, 'low', 'medium', 'high'];
 
         $startDate = fake()->dateTimeBetween('now', '+1 month');
-        $endDate = fake()->dateTimeBetween($startDate, '+1 month');
+        $dueDate = fake()->dateTimeBetween($startDate, '+1 month');
 
         return [
             'name' => fake()->randomElement($prefixes) . ' ' . fake()->randomElement($themes),
             'description' => fake()->text(),
-            'start_date' => $startDate,
-            'end_date' => $endDate,
             'status' => fake()->randomElement($status),
-            'priority' => fake()->randomElement($priorities),
+            // 'priority' => fake()->randomElement($priorities),
+            'start_date' => $startDate,
+            'due_date' => $dueDate,
         ];
+    }
+
+    public function configure()
+    {
+        return $this->afterCreating(function  (Project $project) {
+            Task::factory()
+                ->count(3)
+                ->for($project)
+                ->create();
+        });
     }
 }

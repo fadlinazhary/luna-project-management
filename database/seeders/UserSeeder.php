@@ -16,7 +16,6 @@ class UserSeeder extends Seeder
     {
         // Create dummy users
         User::factory()
-            ->has(Profile::factory())
             ->count(5)
             ->create();
 
