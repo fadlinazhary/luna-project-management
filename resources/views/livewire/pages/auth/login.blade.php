@@ -4,7 +4,7 @@
             <h1 class="login__title">Login</h1>
             <p class="login__description">Login to Luna Project Management</p>
             <br>
-            @if (session('message'))
+            @if (session()->has('message'))
                 <div class="alert alert--success">
                     {{ session('message') }}
                 </div>

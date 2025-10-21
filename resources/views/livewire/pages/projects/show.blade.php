@@ -59,6 +59,11 @@
                     </td>
                 </tr>
                 @endforeach
+                <tr>
+                    <td class="px-4 py-3">
+                        <a href="{{ route('projects.add-task', ['project' => $project]) }}" class="button button--primary w-full">Add a Task</a>
+                    </td>
+                </tr>
             </tbody>
             </table>
         </div>

@@ -7,8 +7,10 @@
         @apply font-semibold mb-2;
     }
 
-    .form-group .form-group__input {
-        @apply border p-2 rounded focus:border-blue-300 disabled:cursor-not-allowed;
+    .form-group .form-group__input,
+    .form-group .form-group__select,
+    .form-group .form-group__textarea {
+        @apply border p-2 rounded bg-white focus:border-blue-300 disabled:cursor-not-allowed;
     }
 
     .form-group .form-group__input.error {
