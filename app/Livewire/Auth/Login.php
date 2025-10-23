@@ -25,7 +25,7 @@ class Login extends Component
         ]);
 
         if (Auth::attempt($credentials)) {
-            return redirect('/');
+            return $this->redirect(route('dashboard'));
         }
 
         $this->addError('login', 'Wrong email or password. Please try again!');

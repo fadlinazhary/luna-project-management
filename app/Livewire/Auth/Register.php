@@ -12,6 +12,7 @@ use Livewire\Component;
 #[Title('Create a Luna Account')]
 class Register extends Component
 {
+    // TODO: Remove this as I want to change into RegisterForm
     public string $name;
     public string $email;
     public string $password;
@@ -22,6 +23,7 @@ class Register extends Component
      */
     public function register()
     {
+        // TODO: Change into RegisterForm
         $validated = $this->validate([
             'name' => ['required', 'string'],
             'email' => ['required', 'email'],
@@ -40,8 +42,9 @@ class Register extends Component
             $user->profile()->create([
                 'name' => $validated['name'],
             ]);
+
             session()->flash('message', 'Account has been successfully created! Please log in!');
-            return redirect('/login');
+            return $this->redirect(route('login'));
         }
 
         $this->addError('register', '');
