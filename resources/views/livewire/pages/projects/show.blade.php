@@ -7,7 +7,6 @@
         <h1 class="text-2xl">{{ $project->name }}</h1>
     </section>
 
-
     <section class="grid grid-cols-3 mt-3 gap-3">
         <div class="bg-white shadow-sm p-4 rounded flex flex-col">
             <x-heroicon-o-calendar-days class="w-6 h-6" />
@@ -51,17 +50,18 @@
                 <tr class="hover:bg-gray-50">
                     <td class="px-4 py-3">{{ $loop->iteration }}</td>
                     <td class="px-4 py-3">{{ $task->name }}</td>
-                    <td class="px-4 py-3">{{ $task->priority }}</td>
+                    <td class="px-4 py-3">{{ $task->priority !== null ? ucfirst($task->priority) : 'Not Determined' }}</td>
                     <td class="px-4 py-3">{{ $task->status }}</td>
                     <td class="px-4 py-3">{{ $task->start_date }} &mdash; {{ $task->due_date }}</td>
                     <td class="px-4 py-3">
+                        <a href="{{ route('projects.edit-task', [$project, $task]) }}" class="button button--primary button--small">Edit Task</a>
                         <button class="button button--danger button--small">Delete Task</button>
                     </td>
                 </tr>
                 @endforeach
                 <tr>
                     <td class="px-4 py-3">
-                        <a href="{{ route('projects.add-task', ['project' => $project]) }}" class="button button--primary w-full">Add a Task</a>
+                        <a href="{{ route('projects.add-task', $project) }}" class="button button--primary w-full">Add a Task</a>
                     </td>
                 </tr>
             </tbody>
