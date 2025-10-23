@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description')->nullable();
-            $table->enum('status', $status);
+            $table->enum('status', $status)->default($status[0]);
             // $table->enum('priority', $priorities)->nullable();
             $table->dateTime('start_date');
             $table->dateTime('due_date')->nullable();

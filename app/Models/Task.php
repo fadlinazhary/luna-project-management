@@ -37,13 +37,6 @@ class Task extends Model
         );
     }
 
-    public function priority(): Attribute
-    {
-        return Attribute::make(
-            get: fn (?string $value) => $value !== null ? ucfirst($value) : 'Not Determined',
-        );
-    }
-
     public function status(): Attribute
     {
         return Attribute::make(
