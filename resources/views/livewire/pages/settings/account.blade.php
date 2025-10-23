@@ -47,8 +47,7 @@
             <button class="button button--danger" @click="openModal = true">Delete My Account</button>
         </section>
 
-        <x-modal x-model="openModal"
-            x-data="{ emailInput: '', requiredEmail: '{{ $user->email }}' }">
+        <x-modal x-model="openModal">
                 <x-slot name="title">Delete Account?</x-slot>
 
                 <div>
