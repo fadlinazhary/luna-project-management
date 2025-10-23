@@ -1,7 +1,4 @@
 <section class="topbar">
-    <section class="topbar__sidebar-collapse flex">
-        <x-heroicon-o-chevron-left class="w-6 h-6" />
-    </section>
     <ul class="topbar__menu">
         <li class="topbar__menu-item">
             <a href="#" class="topbar__menu-link">
