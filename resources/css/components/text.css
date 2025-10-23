@@ -2,4 +2,8 @@
     .text--error {
         @apply text-red-500;
     }
+
+    .text--success {
+        @apply text-green-500;
+    }
 }

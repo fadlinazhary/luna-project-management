@@ -1,6 +1,10 @@
 @layer components {
     .sidebar {
-        @apply flex flex-col p-5 bg-gray-50 border-r border-r-gray-200 min-h-full w-1/5;
+        @apply flex flex-col p-5 bg-gray-50 border-r border-r-gray-200 min-h-full w-1/5 transition-all duration-300;
+    }
+
+    .sidebar--collapsed {
+        @apply w-20;
     }
 
     .sidebar__header {
